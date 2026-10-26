@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "styleId": "careerforge-style",
+  "description": "Readable, ATS-friendly resume document styling.",
+  "page": {
+    "size": "A4",
+    "orientation": "portrait",
+    "margins": {
+      "top": 0.65,
+      "bottom": 0.65,
+      "left": 0.7,
+      "right": 0.7,
+      "unit": "inches"
+    }
+  },
+  "typography": {
+    "fontFamily": "Arial",
+    "bodyFontSizePt": 10.5,
+    "headingFontSizePt": 12,
+    "nameFontSizePt": 20,
+    "minimumFontSizePt": 9,
+    "lineSpacing": 1.0
+  },
+  "layout": {
+    "columns": 1,
+    "useTablesForLayout": false,
+    "useTextBoxes": false,
+    "useIconsForContactDetails": false,
+    "useDecorativeGraphics": false,
+    "keepHeadingsWithFollowingContent": true
+  },
+  "content": {
+    "dateFormat": "MMM YYYY",
+    "bulletStyle": "standard",
+    "allowUnsupportedClaims": false,
+    "preserveEvidenceAccuracy": true
+  }
+}

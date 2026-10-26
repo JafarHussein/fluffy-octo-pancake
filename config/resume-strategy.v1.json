@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "1.0.0",
+  "strategyId": "careerforge-resume-strategy",
+  "description": "Rules for assessing candidates, prioritizing evidence, and planning resume content before document generation.",
+
+  "pagePolicy": {
+    "minimumPages": 1,
+    "maximumPages": 2,
+    "earlyCareerPreferredPages": 1,
+    "allowTwoPagesWhenEvidenceRequiresIt": true,
+    "neverShrinkFontsToForcePageCount": true,
+    "neverRemoveHighValueEvidenceOnlyToMeetPageLimit": true,
+    "readabilityAndEvidenceTakePriorityOverPageCount": true
+  },
+
+  "careerStages": {
+    "student_entry_level": {
+      "description": "Students, recent graduates, and candidates with limited professional experience.",
+      "signals": [
+        "current_or_recent_education",
+        "limited_professional_experience",
+        "relevant_academic_or_personal_projects"
+      ],
+      "sectionPriority": [
+        "summary",
+        "technical_skills",
+        "projects",
+        "experience",
+        "education",
+        "certifications"
+      ]
+    },
+    "early_career": {
+      "description": "Candidates developing professional experience who can demonstrate practical skills through work, internships, or projects.",
+      "signals": [
+        "internship_or_early_professional_experience",
+        "practical_project_ownership",
+        "demonstrated_role_relevant_skills"
+      ],
+      "sectionPriority": [
+        "summary",
+        "experience",
+        "projects",
+        "technical_skills",
+        "education",
+        "certifications"
+      ]
+    },
+    "mid_level": {
+      "description": "Candidates with established independent delivery and ownership of relevant responsibilities.",
+      "signals": [
+        "sustained_relevant_experience",
+        "independent_delivery",
+        "technical_or_functional_ownership"
+      ],
+      "sectionPriority": [
+        "summary",
+        "experience",
+        "projects",
+        "technical_skills",
+        "education",
+        "certifications"
+      ]
+    },
+    "senior": {
+      "description": "Candidates demonstrating substantial responsibility, leadership, complex decisions, or strategic impact.",
+      "signals": [
+        "technical_or_organizational_leadership",
+        "complex_decision_making",
+        "mentoring_or_strategic_ownership",
+        "substantial_relevant_experience"
+      ],
+      "sectionPriority": [
+        "summary",
+        "experience",
+        "leadership_and_impact",
+        "technical_skills",
+        "selected_projects",
+        "education",
+        "certifications"
+      ]
+    }
+  },
+
+  "scoring": {
+    "scale": {
+      "minimum": 0,
+      "maximum": 100
+    },
+    "weights": {
+      "jobRelevance": 0.30,
+      "evidenceStrength": 0.25,
+      "demonstratedImpact": 0.20,
+      "differentiation": 0.15,
+      "recency": 0.10
+    },
+    "spaceCost": {
+      "purpose": "Estimate the space an item consumes when selecting a combination of content.",
+      "mustNotOverrideHighValueEvidence": true
+    },
+    "unsupportedClaims": {
+      "allowInventedMetrics": false,
+      "allowInventedAchievements": false,
+      "allowInventedSkills": false,
+      "allowUnverifiedCredentialsToBePresentedAsVerified": false
+    }
+  },
+
+  "contentSelection": {
+    "deduplicateRepeatedEvidence": true,
+    "prioritizeRoleRelevantEvidence": true,
+    "preserveMeaningAndTechnicalSpecificity": true,
+    "preferDemonstratedOutcomesWhenSupported": true,
+    "allowResponsibilityBulletsWhenOutcomesAreUnavailable": true,
+    "preserveCanonicalProfileData": true,
+    "doNotDeleteDatabaseRecordsDuringTailoring": true,
+    "recordSelectionReasons": true,
+    "recordOmissionsAndReasons": true
+  },
+
+  "bulletPolicy": {
+    "preferredStructure": [
+      "action",
+      "context",
+      "technical_evidence",
+      "outcome_when_supported"
+    ],
+    "avoidGenericRepetition": true,
+    "avoidUnsupportedQuantification": true,
+    "avoidKeywordStuffing": true,
+    "preserveFactualMeaning": true
+  },
+
+  "pageBudgets": {
+    "onePage": {
+      "purpose": "Concise resume for focused applications where the strongest evidence fits comfortably.",
+      "contentRules": {
+        "summary": "Brief and role-specific",
+        "experience": "Prioritize the most relevant responsibilities and achievements",
+        "projects": "Select the strongest role-relevant projects",
+        "skills": "Group relevant skills and remove redundant mentions",
+        "education": "Include relevant qualifications without unnecessary detail",
+        "certifications": "Include the most relevant and accurately represented credentials"
+      }
+    },
+    "twoPages": {
+      "purpose": "Use when additional relevant evidence materially strengthens the application.",
+      "contentRules": {
+        "experience": "Retain distinct, relevant responsibilities and supported achievements",
+        "projects": "Include additional projects when they demonstrate distinct competencies",
+        "skills": "Keep grouped, relevant, and non-redundant",
+        "education": "Preserve relevant qualifications",
+        "certifications": "Prioritize relevance and validity"
+      }
+    }
+  },
+
+  "layoutValidation": {
+    "validateRenderedPageCount": true,
+    "detectUnexpectedBlankPages": true,
+    "detectOrphanedSectionHeadings": true,
+    "detectExcessiveWhitespace": true,
+    "detectContentOverflow": true,
+    "retryContentSelectionBeforeReducingFontSize": true,
+    "respectVisualStyleConfiguration": true
+  },
+
+  "strategyReport": {
+    "includeCareerStageAndConfidence": true,
+    "includeChosenPageCountAndReason": true,
+    "includeSectionSelectionReasons": true,
+    "includeEvidenceScores": true,
+    "includeMissingRoleEvidence": true,
+    "includeContentOmissions": true,
+    "includeRulesetVersion": true
+  }
+}

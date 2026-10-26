@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "catalogId": "careerforge-ats-rule-catalog",
+  "description": "Versioned checks for resume parsing, relevance, evidence integrity, content quality, and human review.",
+  "rules": [
+    {
+      "id": "DOC-001",
+      "category": "document_parsing",
+      "severity": "error",
+      "description": "Contact details and resume text must be extractable from the generated document."
+    },
+    {
+      "id": "DOC-002",
+      "category": "document_parsing",
+      "severity": "warning",
+      "description": "Use a conventional reading order and avoid layout structures that interfere with text extraction."
+    },
+    {
+      "id": "DOC-003",
+      "category": "document_parsing",
+      "severity": "warning",
+      "description": "Use recognizable section headings and consistent date formatting."
+    },
+    {
+      "id": "DOC-004",
+      "category": "document_parsing",
+      "severity": "warning",
+      "description": "Keep the document readable without relying on color, icons, or decorative graphics."
+    },
+    {
+      "id": "DOC-005",
+      "category": "document_parsing",
+      "severity": "warning",
+      "description": "Validate page count, spacing, and font sizes before release."
+    },
+    {
+      "id": "MATCH-001",
+      "category": "job_relevance",
+      "severity": "warning",
+      "description": "Prioritize evidence relevant to the target job description."
+    },
+    {
+      "id": "MATCH-002",
+      "category": "job_relevance",
+      "severity": "warning",
+      "description": "Use important job-description terminology only when supported by candidate evidence."
+    },
+    {
+      "id": "MATCH-003",
+      "category": "job_relevance",
+      "severity": "warning",
+      "description": "Identify important job requirements that lack supporting evidence."
+    },
+    {
+      "id": "MATCH-004",
+      "category": "job_relevance",
+      "severity": "warning",
+      "description": "Avoid keyword stuffing and repeated claims that add no useful evidence."
+    },
+    {
+      "id": "CONT-001",
+      "category": "content_integrity",
+      "severity": "error",
+      "description": "Do not invent employment, education, projects, certifications, or skills."
+    },
+    {
+      "id": "CONT-002",
+      "category": "content_integrity",
+      "severity": "error",
+      "description": "Do not invent metrics, outcomes, responsibilities, or achievements."
+    },
+    {
+      "id": "CONT-003",
+      "category": "content_integrity",
+      "severity": "warning",
+      "description": "Keep claims traceable to canonical profile evidence."
+    },
+    {
+      "id": "CONT-004",
+      "category": "content_integrity",
+      "severity": "warning",
+      "description": "Use consistent role titles, organization names, and dates."
+    },
+    {
+      "id": "CONT-005",
+      "category": "content_integrity",
+      "severity": "warning",
+      "description": "Explain omitted evidence in the strategy report rather than deleting source records."
+    },
+    {
+      "id": "HUMAN-001",
+      "category": "human_review",
+      "severity": "review",
+      "description": "Require human review when evidence is ambiguous or a claim cannot be verified."
+    },
+    {
+      "id": "HUMAN-002",
+      "category": "human_review",
+      "severity": "review",
+      "description": "Require final review of the tailored resume before submission."
+    },
+    {
+      "id": "TEST-001",
+      "category": "validation",
+      "severity": "error",
+      "description": "Validate required inputs, configuration files, and generated output before reporting success."
+    }
+  ]
+}
